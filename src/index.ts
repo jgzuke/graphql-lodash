@@ -168,8 +168,8 @@ function getDirectivesFromAST(ast) {
   const fullAST = concatAST([ast, parse(dummyIDL)]);
   const schema = buildASTSchema(fullAST);
 
-  (schema.getTypeMap()['Path'] as any).parseLiteral = (x => x.value);
-  (schema.getTypeMap()['JSON'] as any).parseLiteral = astToJSON;
+  (schema.getTypeMap()['LodashPath'] as any).parseLiteral = (x => x.value);
+  (schema.getTypeMap()['LodashJSON'] as any).parseLiteral = astToJSON;
 
   return schema.getDirectives();
 }

@@ -1,6 +1,6 @@
 const lodashProps = `
-  map: Path
-  keyBy: Path
+  map: LodashPath
+  keyBy: LodashPath
   each: LodashOperations
 
   # Creates an array of elements split into groups the length of size.
@@ -39,29 +39,29 @@ const lodashProps = `
   # they occur in the array.
   uniq: DummyArgument
 
-  uniqBy: Path
+  uniqBy: LodashPath
 
-  countBy: Path
-  filter: JSON
-  reject: JSON
+  countBy: LodashPath
+  filter: LodashJSON
+  reject: LodashJSON
   filterIf: Predicate
   rejectIf: Predicate
-  groupBy: Path
-  sortBy: [Path!]
+  groupBy: LodashPath
+  sortBy: [LodashPath!]
 
-  minBy: Path
-  maxBy: Path
-  meanBy: Path
-  sumBy: Path
+  minBy: LodashPath
+  maxBy: LodashPath
+  meanBy: LodashPath
+  sumBy: LodashPath
 
   # Converts all elements in array into a string separated by separator.
   join: String
 
-  get: Path
-  mapValues: Path
+  get: LodashPath
+  mapValues: LodashPath
 
   # Creates an array of values corresponding to paths of object.
-  at: [Path!]
+  at: [LodashPath!]
   # Creates an array of own enumerable string keyed-value pairs for object.
   toPairs: DummyArgument
 
@@ -70,7 +70,7 @@ const lodashProps = `
   # assignments of previous values.
   invert: DummyArgument
 
-  invertBy: Path
+  invertBy: LodashPath
   # Creates an array of the own enumerable property names of object.
   keys: DummyArgument
   # Creates an array of the own enumerable string keyed property values of object.
@@ -78,19 +78,19 @@ const lodashProps = `
 `;
 
 export const lodashIDL = `
-scalar Path
-scalar JSON
+scalar LodashPath
+scalar LodashJSON
 
 enum DummyArgument {
   none
 }
 
 input Predicate {
-  lt: JSON
-  lte: JSON
-  gt: JSON
-  gte: JSON
-  eq: JSON
+  lt: LodashJSON
+  lte: LodashJSON
+  gt: LodashJSON
+  gte: LodashJSON
+  eq: LodashJSON
   startsWith: String
   endsWith: String
   and: [Predicate!]
